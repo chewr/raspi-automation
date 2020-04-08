@@ -8,6 +8,13 @@ source conf
 mkdir -p ${DIR_CODE}
 mkdir -p ${DIR_PROJ}
 
+## clone project
+if [ ! -d ${DIR_CODE}/github.com/chewr/raspi-automation ]
+then
+				mkdir -p ${DIR_CODE}/github.com/chewr
+				git clone https://github.com/chewr/raspi-automation.git ${DIR_CODE}/github.com/chewr/raspi-automation
+fi
+
 ## Setup project symlink
 ln -s ${DIR_CODE}/github.com/chewr/raspi-automation ${DIR_PROJ}/raspi-automation
 
